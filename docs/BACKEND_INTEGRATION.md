@@ -2,7 +2,7 @@
 
 Every call the Admin Console makes, verified against the Java source in `Spacz_backend/spacz-platform`
 (controllers, DTO records, entity state machines, sort whitelists). All calls go through the gateway
-(`VITE_API_BASE_URL`, default `http://localhost:8080`).
+(`EXPO_PUBLIC_API_BASE_URL`, default `https://api.spacz.in`).
 
 Lists take `page` (0-based), `size`, `sort=field,dir` and return
 `{content, page, size, totalElements, totalPages, first, last}`. Errors use the shared envelope

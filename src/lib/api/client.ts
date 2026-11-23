@@ -2,7 +2,7 @@ import { ApiError, type ApiErrorBody } from './errors';
 import type { AuthResponse } from './types';
 import { readRefreshToken, useSession } from '@/lib/auth/session';
 
-export const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/+$/, '') ?? 'http://localhost:8080';
+export const API_BASE_URL = (import.meta.env.EXPO_PUBLIC_API_BASE_URL as string | undefined)?.replace(/\/+$/, '') ?? 'https://api.spacz.in';
 
 const DEFAULT_TIMEOUT_MS = 20_000;
 

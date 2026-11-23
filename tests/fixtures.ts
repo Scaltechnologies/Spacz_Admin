@@ -15,7 +15,8 @@ import type {
   StudyHallSummary,
 } from '@/lib/api/types';
 
-export const API = 'http://localhost:8080';
+// Follow whatever base URL the client resolved (from .env) so MSW handlers always match.
+export { API_BASE_URL as API } from '@/lib/api/client';
 
 export function page<T>(content: T[], over: Partial<PageResponse<T>> = {}): PageResponse<T> {
   return { content, page: 0, size: 20, totalElements: content.length, totalPages: 1, first: true, last: true, ...over };

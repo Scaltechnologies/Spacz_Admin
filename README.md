@@ -11,7 +11,7 @@ React Hook Form + Zod · Recharts · Lucide · Sonner · Motion.
 ## Quick start
 
 ```bash
-cp .env.example .env          # VITE_API_BASE_URL=http://localhost:8080 (the gateway)
+cp .env.example .env          # EXPO_PUBLIC_API_BASE_URL=https://api.spacz.in (the gateway)
 npm install
 npm run dev                   # http://localhost:5173 (already allowed by the gateway's CORS)
 ```
@@ -33,7 +33,7 @@ with the bootstrap admin from that project's `.env` (`BOOTSTRAP_ADMIN_EMAIL` / `
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `VITE_API_BASE_URL` | `http://localhost:8080` | Gateway origin. Never point at individual services |
+| `EXPO_PUBLIC_API_BASE_URL` | `https://api.spacz.in` | Gateway origin. Never point at individual services |
 | `VITE_APP_NAME` | `SPACZ Admin` | Display name |
 
 Vite inlines these at build time, so build once per environment.
@@ -124,7 +124,7 @@ persistence, vendor approval → audit log, program create/deactivate, logout, a
 Static build served by any web server or CDN with an SPA fallback to `index.html`.
 
 ```bash
-docker build --build-arg VITE_API_BASE_URL=https://api.spacz.in -t spacz/admin-web .
+docker build --build-arg EXPO_PUBLIC_API_BASE_URL=https://api.spacz.in -t spacz/admin-web .
 docker run -p 8085:80 -e API_ORIGIN=https://api.spacz.in spacz/admin-web
 ```
 

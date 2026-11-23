@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  // Expose EXPO_PUBLIC_* as well as VITE_* to client code (EXPO_PUBLIC_API_BASE_URL).
+  envPrefix: ['VITE_', 'EXPO_PUBLIC_'],
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   server: { port: 5173, strictPort: true },
   build: {
